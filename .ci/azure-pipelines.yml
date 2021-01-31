@@ -26,7 +26,7 @@ steps:
   inputs:
     actions: 'build'
     configuration: 'Release'
-    sdk: 'macosx10.15'
+    #sdk: 'macosx10.15'
     xcWorkspacePath: '**/*.xcodeproj'
     packageApp: false
     signingOption: 'default'
