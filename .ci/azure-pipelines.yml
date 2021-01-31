@@ -33,7 +33,7 @@ steps:
 - task: Bash@3
   inputs:
     targetType: 'inline'
-    script: 'curl -O https://repo.jellyfin.org/releases/server/macos/stable/combined/jellyfin_10.6.4.tar.gz'
+    script: 'curl -O -L https://repo.jellyfin.org/releases/server/macos/stable/combined/jellyfin_10.6.4.tar.gz'
     workingDirectory: '$(System.DefaultWorkingDirectory)/build/Release/'
 
 # Extract them in to the working directory
