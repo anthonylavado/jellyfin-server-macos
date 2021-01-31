@@ -30,13 +30,11 @@ steps:
     useXcpretty: true
 
 # Get the latest Jellyfin release for mac
-- task: DownloadGitHubRelease@0
+- task: Bash@3
   inputs:
-    connection: 'Jellyfin Release Download'
-    userRepository: 'jellyfin/jellyfin'
-    defaultVersionType: 'latest'
-    itemPattern: '*macos.tar.gz'
-    downloadPath: '$(System.DefaultWorkingDirectory)/build/Release/'
+    targetType: 'inline'
+    script: 'curl -O https://repo.jellyfin.org/releases/server/macos/stable/combined/jellyfin_10.6.4.tar.gz'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/build/Release/'
 
 # Extract them in to the working directory
 - task: ExtractFiles@1
