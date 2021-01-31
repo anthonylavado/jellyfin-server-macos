@@ -35,11 +35,10 @@ steps:
     targetType: 'inline'
     script: 'curl -O -L https://repo.jellyfin.org/releases/server/macos/stable/combined/jellyfin_10.6.4.tar.gz'
     workingDirectory: '$(System.DefaultWorkingDirectory)/build/Release/'
-
 # Extract them in to the working directory
 - task: ExtractFiles@1
   inputs:
-    archiveFilePatterns: '*.gz'
+    archiveFilePatterns: '$(System.DefaultWorkingDirectory)/build/Release/*.gz'
     destinationFolder: '$(System.DefaultWorkingDirectory)/build/Release/'
     cleanDestinationFolder: false
 
